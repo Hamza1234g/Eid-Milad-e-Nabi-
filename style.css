@@ -1,0 +1,105 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/>/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #000428, #004e92);
+  color: white;
+  text-align: center;
+}
+
+/* Stars Background */
+.stars {
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Navigation Bar */
+nav {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+}
+nav a {
+  color: #00ffcc;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #ffcc00;
+}
+
+/* Header */
+header {
+  padding: 40px 20px;
+}
+header h1 {
+  font-size: 2.5em;
+  text-shadow: 0 0 15px #00ffcc;
+}
+header p {
+  font-size: 1.2em;
+}
+
+/* Sections */
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Gallery */
+.gallery {
+  margin-top: 20px;
+}
+.gallery .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+}
+
+/* Buttons */
+button {
+  background: #00ffcc;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #ffcc00;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Nasheed List */
+.nasheed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+.nasheed-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,255,204,0.4);
+}
+.nasheed-item h3 {
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #00ffcc;
+}

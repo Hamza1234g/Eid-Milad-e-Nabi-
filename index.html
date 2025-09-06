@@ -1,0 +1,186 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eid Milad-un-Nabi ﷺ</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Sidebar Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 220px;
+      background: rgba(0, 0, 0, 0.85);
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(-100%);
+      z-index: 1000;
+    }
+    nav.active {
+      transform: translateX(0);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 18px;
+      display: block;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Main content */
+    .content {
+      margin-left: 0;
+      padding: 20px;
+      transition: margin-left 0.3s;
+    }
+
+    /* Hamburger button at top-left */
+    .menu-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      width: 45px;
+      height: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 6px;
+      background: #333;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .menu-btn span {
+      height: 4px;
+      width: 100%;
+      background: white;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    /* Animate menu icon to "X" */
+    .menu-btn.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    .menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-btn.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Overlay background when menu is open */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: 999;
+      display: none;
+    }
+    .overlay.active {
+      display: block;
+    }
+
+    @media (min-width: 769px) {
+      nav {
+        transform: translateX(0);
+      }
+      .menu-btn, .overlay {
+        display: none;
+      }
+      .content {
+        margin-left: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+  <!-- Sidebar Navigation -->
+  <nav id="sidebar">
+    <a href="index.html">Home</a>
+    <a href="makkah.html">Makkah</a>
+    <a href="madinah.html">Madinah</a>
+    <a href="calligraphy.html">Calligraphy</a>
+    <a href="nasheeds.html">Nasheeds</a>
+    <a href="seerah.html">Seerah</a>
+    <a href="hadith.html">Hadith</a>
+    <a href="dua.html">Duas</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Hamburger Button -->
+  <div class="menu-btn" id="menu-btn" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Page Content -->
+  <div class="content">
+    <header>
+      <h1>🌙 Eid Milad-un-Nabi ﷺ Mubarak 🌙</h1>
+      <p>Celebrating the blessed birth of Prophet Muhammad ﷺ</p>
+    </header>
+
+    <section>
+      <h2>Welcome</h2>
+      <p>
+        Eid Milad-un-Nabi ﷺ is a day of love, light, and guidance.  
+        Muslims around the world rejoice in remembering the noble life 
+        and teachings of the Beloved Prophet Muhammad ﷺ.  
+      </p>
+    </section>
+
+    <section>
+      <h2>How We Celebrate</h2>
+      <ul>
+        <li>🌸 Reciting Qur’an and sending Salawat (peace & blessings).</li>
+        <li>🕋 Visiting masajid beautifully decorated with lights.</li>
+        <li>🤲 Making special duas for peace, unity, and blessings.</li>
+        <li>🎶 Listening to nasheeds in praise of the Prophet ﷺ.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Special Dua</h2>
+      <p>Click the button below to read a beautiful dua.</p>
+      <button onclick="showDua()">Read Dua</button>
+    </section>
+
+    <footer>
+      <p>✨ May the light of the Prophet ﷺ guide us always ✨</p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("sidebar").classList.toggle("active");
+      document.getElementById("menu-btn").classList.toggle("active");
+      document.getElementById("overlay").classList.toggle("active");
+    }
+    function closeMenu() {
+      document.getElementById("sidebar").classList.remove("active");
+      document.getElementById("menu-btn").classList.remove("active");
+      document.getElementById("overlay").classList.remove("active");
+    }
+  </script>
+</body>
+</html>
